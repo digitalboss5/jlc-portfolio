@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JL Corporate — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0C1220;
+      --body-bg:    #F8F7F4;
+      --card-bg:    #FFFFFF;
+      --gold:       #D4AF37;
+      --gold-dim:   rgba(212,175,55,0.14);
+      --gold-border: rgba(212,175,55,0.32);
+      --gold-muted: rgba(212,175,55,0.75);
+      --text:       #1C2130;
+      --muted:      #6B7280;
+      --light:      #9CA3AF;
+      --border:     #E2E1DC;
+      --border-mid: #D1D0CB;
+    }
+
+    body {
+      background: var(--body-bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 22px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--gold-border);
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .brand-name span { color: var(--gold); }
+
+    .header-tag {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #8A7020;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-border);
+      padding: 5px 14px;
+      border-radius: 100px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 64px 64px 52px;
+      max-width: 780px;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    .hero-title span { color: var(--gold); }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 540px;
+    }
+
+    /* ── DIVIDER LINE ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 64px;
+    }
+
+    /* ── TIER SECTION ── */
+    .tier-section {
+      padding: 56px 64px;
+      border-bottom: 1px solid var(--border);
+      background: var(--card-bg);
+    }
+
+    .tier-section:nth-child(odd) {
+      background: var(--body-bg);
+    }
+
+    .tier-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .tier-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+
+    .tier-left {}
+
+    .tier-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #8A7020;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-border);
+      padding: 5px 13px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+
+    .tier-badge--elite {
+      color: var(--navy);
+      background: var(--gold-dim);
+      border-color: var(--gold-border);
+    }
+
+    .tier-badge--starter {
+      color: #1A7A63;
+      background: rgba(110,207,181,0.12);
+      border-color: rgba(110,207,181,0.35);
+    }
+
+    .tier-badge--growth {
+      color: #1A7A63;
+      background: rgba(110,207,181,0.12);
+      border-color: rgba(110,207,181,0.35);
+    }
+
+    .tier-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .tier-title span { color: var(--gold); }
+
+    .tier-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 440px;
+    }
+
+    .tier-price {
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    .tier-price-amount {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .tier-price-note {
+      font-size: 0.75rem;
+      color: var(--light);
+      margin-top: 5px;
+      line-height: 1.5;
+    }
+
+    /* ── CARDS GRID ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── SITE CARD ── */
+    .site-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .site-card:hover {
+      border-color: var(--gold-border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    /* Browser chrome */
+    .card-browser {
+      background: #F0EFF0;
+      border-bottom: 1px solid var(--border);
+      padding: 9px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+
+    .browser-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .browser-dots span:nth-child(1) { background: rgba(255,95,87,0.55); }
+    .browser-dots span:nth-child(2) { background: rgba(255,188,46,0.55); }
+    .browser-dots span:nth-child(3) { background: rgba(40,200,64,0.55); }
+
+    .browser-url {
+      background: rgba(0,0,0,0.05);
+      border-radius: 5px;
+      padding: 4px 10px;
+      font-size: 0.68rem;
+      color: var(--light);
+      font-family: 'DM Sans', sans-serif;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Card preview area */
+    .card-preview {
+      height: 140px;
+      background: linear-gradient(145deg, #F4F3EF 0%, #EAE9E4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-preview::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(212,175,55,0.08) 0%, transparent 60%);
+    }
+
+    .preview-icon {
+      font-size: 2.5rem;
+      opacity: 0.35;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-preview--elite {
+      background: linear-gradient(145deg, #EEF0F5 0%, #E4E8F0 100%);
+    }
+
+    .card-preview--elite::before {
+      background: radial-gradient(ellipse at 70% 30%, rgba(212,175,55,0.1) 0%, transparent 60%);
+    }
+
+    .card-preview--starter {
+      background: linear-gradient(145deg, #EEF6F4 0%, #E4F0EC 100%);
+    }
+
+    .card-preview--starter::before {
+      background: radial-gradient(ellipse at 70% 30%, rgba(110,207,181,0.12) 0%, transparent 60%);
+    }
+
+    /* Card body */
+    .card-body {
+      padding: 18px 20px 14px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-category {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--light);
+    }
+
+    .card-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text);
+    }
+
+    .card-description {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    /* Card footer */
+    .card-footer {
+      padding: 12px 20px 16px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .btn-preview {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 14px;
+      background: var(--navy);
+      color: #FFFFFF;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.15s;
+    }
+
+    .btn-preview:hover {
+      background: #1e2d48;
+      transform: translateY(-1px);
+    }
+
+    .btn-live {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 14px;
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border-mid);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .btn-live:hover {
+      border-color: var(--gold-border);
+      color: var(--text);
+    }
+
+    /* ── LEAD BADGE on starter cards ── */
+    .lead-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.56rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: #1A7A63;
+      background: rgba(110,207,181,0.12);
+      border: 1px solid rgba(110,207,181,0.35);
+      padding: 3px 8px;
+      border-radius: 100px;
+      margin-top: 2px;
+    }
+
+    .site-card--starter {
+      border-color: rgba(110,207,181,0.3);
+    }
+
+    .site-card--starter:hover {
+      border-color: rgba(110,207,181,0.6);
+      box-shadow: 0 4px 16px rgba(110,207,181,0.1);
+    }
+
+    /* ── STARTER LEAD FEATURES strip ── */
+    .starter-features {
+      margin-top: 20px;
+      background: var(--card-bg);
+      border: 1px solid rgba(110,207,181,0.25);
+      border-radius: 14px;
+      padding: 22px 26px;
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .starter-features-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #1A7A63;
+      white-space: nowrap;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .starter-features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 8px 24px;
+      flex: 1;
+    }
+
+    .starter-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .starter-feature-item::before {
+      content: '✓';
+      color: #2BA98A;
+      font-weight: 700;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── GROWTH CARD ── */
+    .growth-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(110,207,181,0.3);
+      border-radius: 14px;
+      padding: 32px 36px;
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .growth-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 280px;
+      height: 100%;
+      background: radial-gradient(ellipse at right center, rgba(110,207,181,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .growth-card-left {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .growth-card-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .growth-card-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+
+    .growth-includes {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .growth-includes li {
+      list-style: none;
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .growth-includes li::before {
+      content: '✓';
+      color: #2BA98A;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .growth-card-right {
+      flex-shrink: 0;
+      text-align: right;
+      padding-top: 4px;
+    }
+
+    .growth-price-main {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #1A7A63;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .growth-price-plus {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .growth-price-note {
+      font-size: 0.72rem;
+      color: var(--light);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    .growth-examples {
+      display: flex;
+      gap: 6px;
+      flex-direction: column;
+      margin-top: 18px;
+      align-items: flex-end;
+    }
+
+    .growth-examples-label {
+      font-size: 0.65rem;
+      color: var(--light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .growth-link {
+      font-size: 0.75rem;
+      color: #2BA98A;
+      text-decoration: none;
+      opacity: 0.85;
+      transition: opacity 0.15s;
+    }
+
+    .growth-link:hover { opacity: 1; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--navy);
+      border-top: none;
+      padding: 32px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-left {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+    }
+
+    .footer-left strong {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .footer-cta {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #0C1220;
+      background: var(--gold);
+      padding: 11px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+
+    .footer-cta:hover { background: #e0be40; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="brand">
+    <div class="brand-icon">
+      <img src="../Client Portal/public/jlc-profile.png" alt="JL Corporate" />
+    </div>
+    <div class="brand-name">JL <span>Corporate</span> Services</div>
+  </div>
+  <div class="header-tag">Our Work</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Portfolio</div>
+  <h1 class="hero-title">Real Sites. <span>Real Results.</span><br>Built for Local Business.</h1>
+  <p class="hero-sub">Every site we build is mobile-ready, fast, and designed to turn visitors into customers. Browse examples across all four of our service tiers below.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- TIER 1: WEBSITE PLAN -->
+<section class="tier-section">
+  <div class="tier-header">
+    <div class="tier-left">
+      <div class="tier-badge">Website Plan</div>
+      <h2 class="tier-title">Professional Sites.<br><span>Fast Turnaround.</span></h2>
+      <p class="tier-desc">Flat-rate website built from a premium template — mobile-ready, SEO-ready, and live in 5–7 business days.</p>
+    </div>
+    <div class="tier-price">
+      <div class="tier-price-amount">$597</div>
+      <div class="tier-price-note">One-time flat fee<br>$300 deposit · $297 on delivery</div>
+    </div>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- Card 1: Desert Rose Beauty -->
+    <div class="site-card">
+      <div class="card-browser">
+        <div class="browser-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="browser-url">desert-rose-beauty.jlcorp.cloud</div>
+      </div>
+      <div class="card-preview">
+        <div class="preview-icon">🌹</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Hair Salon</div>
+        <div class="card-name">Desert Rose Beauty</div>
+        <div class="card-description">Full-service salon site with services menu, gallery, booking CTA, and a warm brand-matched design.</div>
+      </div>
+      <div class="card-footer">
+        <a href="https://jlc-prospect-desert-rose-beauty.vercel.app" target="_blank" class="btn-preview">
+          ↗ Preview
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 2: Ace Auto Repair -->
+    <div class="site-card">
+      <div class="card-browser">
+        <div class="browser-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="browser-url">ace-auto-repair.jlcorp.cloud</div>
+      </div>
+      <div class="card-preview">
+        <div class="preview-icon">🔧</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Auto Repair</div>
+        <div class="card-name">Ace Auto Repair</div>
+        <div class="card-description">Auto shop site with service list, trust signals, customer reviews, and a direct quote request form.</div>
+      </div>
+      <div class="card-footer">
+        <a href="https://jlc-prospect-ace-auto-repair.vercel.app" target="_blank" class="btn-preview">
+          ↗ Preview
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 3: GreenThumb Landscaping -->
+    <div class="site-card">
+      <div class="card-browser">
+        <div class="browser-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="browser-url">greenthumb-landscaping.jlcorp.cloud</div>
+      </div>
+      <div class="card-preview">
+        <div class="preview-icon">🌿</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Landscaping</div>
+        <div class="card-name">GreenThumb Landscaping</div>
+        <div class="card-description">Landscaping company site showcasing desert-friendly design, service packages, and a free estimate CTA.</div>
+      </div>
+      <div class="card-footer">
+        <a href="https://jlc-prospect-greenthumb-landscaping.vercel.app" target="_blank" class="btn-preview">
+          ↗ Preview
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TIER 2: STARTER -->
+<section class="tier-section">
+  <div class="tier-header">
+    <div class="tier-left">
+      <div class="tier-badge tier-badge--starter">Starter</div>
+      <h2 class="tier-title">Website Plan +<br><span>Client Portal.</span></h2>
+      <p class="tier-desc">Everything in the Website Plan — same professional template site — plus a dedicated client portal where every lead is captured, tracked, and managed in one place.</p>
+    </div>
+    <div class="tier-price">
+      <div class="tier-price-amount">$597</div>
+      <div class="tier-price-note">one-time + $147/mo lead system<br>$300 deposit · $297 on delivery</div>
+    </div>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- Card 1: Desert Rose Beauty -->
+    <div class="site-card site-card--starter">
+      <div class="card-browser">
+        <div class="browser-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="browser-url">desert-rose-beauty.jlcorp.cloud</div>
+      </div>
+      <div class="card-preview card-preview--starter">
+        <div class="preview-icon">🌹</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Hair Salon</div>
+        <div class="card-name">Desert Rose Beauty</div>
+        <div class="lead-badge">+ Client Portal</div>
+        <div class="card-description">Same professional site — plus every inquiry is captured, logged, and followed up automatically.</div>
+      </div>
+      <div class="card-footer">
+        <a href="https://jlc-prospect-desert-rose-beauty.vercel.app" target="_blank" class="btn-preview">
+          ↗ Preview
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 2: Ace Auto Repair -->
+    <div class="site-card site-card--starter">
+      <div class="card-browser">
+        <div class="browser-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="browser-url">ace-auto-repair.jlcorp.cloud</div>
+      </div>
+      <div class="card-preview card-preview--starter">
+        <div class="preview-icon">🔧</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Auto Repair</div>
+        <div class="card-name">Ace Auto Repair</div>
+        <div class="lead-badge">+ Client Portal</div>
+        <div class="card-description">Same professional site — plus instant SMS alerts every time a lead submits the contact form.</div>
+      </div>
+      <div class="card-footer">
+        <a href="https://jlc-prospect-ace-auto-repair.vercel.app" target="_blank" class="btn-preview">
+          ↗ Preview
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 3: GreenThumb Landscaping -->
+    <div class="site-card site-card--starter">
+      <div class="card-browser">
+        <div class="browser-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="browser-url">greenthumb-landscaping.jlcorp.cloud</div>
+      </div>
+      <div class="card-preview card-preview--starter">
+        <div class="preview-icon">🌿</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Landscaping</div>
+        <div class="card-name">GreenThumb Landscaping</div>
+        <div class="lead-badge">+ Client Portal</div>
+        <div class="card-description">Same professional site — plus a lead pipeline to track every inquiry from first contact to booked job.</div>
+      </div>
+      <div class="card-footer">
+        <a href="https://jlc-prospect-greenthumb-landscaping.vercel.app" target="_blank" class="btn-preview">
+          ↗ Preview
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Client portal features strip -->
+  <div class="starter-features">
+    <div class="starter-features-label">Client Portal<br>Included</div>
+    <div class="starter-features-grid">
+      <div class="starter-feature-item">Lead capture forms on every page</div>
+      <div class="starter-feature-item">Instant SMS alerts when a lead comes in</div>
+      <div class="starter-feature-item">Automated confirmation message to the lead</div>
+      <div class="starter-feature-item">Lead inbox — every inquiry in one place</div>
+      <div class="starter-feature-item">Visual pipeline to track leads to close</div>
+      <div class="starter-feature-item">Analytics — volume, sources, conversion rate</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIER 3: ELITE (now tier 3 of 4) -->
+<section class="tier-section">
+  <div class="tier-header">
+    <div class="tier-left">
+      <div class="tier-badge tier-badge--elite">★ Elite Site</div>
+      <h2 class="tier-title">Custom-Built.<br><span>AI-Powered.</span></h2>
+      <p class="tier-desc">Fully custom site built from scratch — unique design, AI-enhanced copy, advanced layout, and brand identity baked in. No templates.</p>
+    </div>
+    <div class="tier-price">
+      <div class="tier-price-amount">$1,200</div>
+      <div class="tier-price-note">One-time flat fee<br>$600 deposit · $600 on delivery</div>
+    </div>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- Card: JL Corporate Services -->
+    <div class="site-card">
+      <div class="card-browser">
+        <div class="browser-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="browser-url">jlcorpservices.com</div>
+      </div>
+      <div class="card-preview card-preview--elite">
+        <div class="preview-icon">🏢</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Digital Agency</div>
+        <div class="card-name">JL Corporate Services</div>
+        <div class="card-description">Our own flagship site — fully custom design, AI-enhanced copy, animated sections, and premium brand identity throughout.</div>
+      </div>
+      <div class="card-footer">
+        <a href="https://jlcorpservices.com" target="_blank" class="btn-preview">
+          ↗ View Live Site
+        </a>
+      </div>
+    </div>
+
+    <!-- Card: RapidCool -->
+    <div class="site-card">
+      <div class="card-browser">
+        <div class="browser-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="browser-url">rapidcool-demo.jlcorp.cloud</div>
+      </div>
+      <div class="card-preview card-preview--elite">
+        <div class="preview-icon">🌬️</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">HVAC · Demo</div>
+        <div class="card-name">RapidCool HVAC</div>
+        <div class="card-description">Elite-tier HVAC demo — custom layout, motion design, service breakdown, and lead capture built in from the ground up.</div>
+      </div>
+      <div class="card-footer">
+        <a href="https://rapidcool-demo.jlcorp.cloud" target="_blank" class="btn-preview">
+          ↗ View Live Site
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TIER 3: GROWTH -->
+<section class="tier-section">
+  <div class="tier-header">
+    <div class="tier-left">
+      <div class="tier-badge tier-badge--growth">Growth Bundle</div>
+      <h2 class="tier-title">Elite Site +<br><span>Client Portal.</span></h2>
+      <p class="tier-desc">Everything in the Elite plan, plus a dedicated client portal to capture, track, and manage every lead — all in one place.</p>
+    </div>
+    <div class="tier-price">
+      <div class="tier-price-amount" style="color:#1A7A63;">$1,200</div>
+      <div class="tier-price-note">one-time · then $147/mo<br>for client portal</div>
+    </div>
+  </div>
+
+  <div class="growth-card">
+    <div class="growth-card-left">
+      <div class="growth-card-title">Everything in Elite, plus a fully managed client portal.</div>
+      <div class="growth-card-desc">
+        The Growth bundle is the complete package. We build your custom Elite site and layer on a client portal that captures, tracks, and manages every lead so nothing falls through the cracks.
+      </div>
+      <ul class="growth-includes">
+        <li>Fully custom Elite site (same as above)</li>
+        <li>Client portal with lead pipeline and tracking</li>
+        <li>Lead capture forms connected to your portal inbox</li>
+        <li>AI Chatbot Widget — answers questions &amp; captures leads 24/7 <span style="font-size:0.72rem;font-weight:700;color:#2BA98A;background:rgba(110,207,181,0.12);border:1px solid rgba(110,207,181,0.35);padding:1px 7px;border-radius:100px;margin-left:4px;">Free</span></li>
+        <li>Monthly performance reports</li>
+        <li>Ongoing support and updates</li>
+      </ul>
+    </div>
+    <div class="growth-card-right">
+      <div class="growth-price-main">$1,200</div>
+      <div class="growth-price-plus">+ $147 / month</div>
+      <div class="growth-price-note">$600 deposit · $600 on delivery<br>Client portal billed monthly after launch</div>
+      <div class="growth-examples">
+        <div class="growth-examples-label">Site examples</div>
+        <a href="https://jlcorpservices.com" target="_blank" class="growth-link">jlcorpservices.com ↗</a>
+        <a href="https://rapidcool-demo.jlcorp.cloud" target="_blank" class="growth-link">rapidcool-demo.jlcorp.cloud ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">
+    <strong>JL Corporate Services</strong><br>
+    Web Design &amp; Lead Generation for Local Businesses<br>
+    jlcorpservices.com
+  </div>
+  <a href="https://jlcorpservices.com" target="_blank" class="footer-cta">Get Your Site Built →</a>
+</footer>
+
+</body>
+</html>
